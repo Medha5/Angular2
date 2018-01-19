@@ -1,6 +1,6 @@
 <div class="container">
 
-  <form class="well form-horizontal" action="" method="post"  id="contact_form">
+  <form class="well form-horizontal">
       <fieldset>
 
           <!-- Form Name -->
@@ -11,7 +11,7 @@
               <div class="col-md-4 inputGroupContainer">
               <div class="input-group">
               <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-              <input  name="first_name" placeholder="First Name" class="form-control"  type="text">
+              <input  [(ngModel)]="user.firstName" name="first_name" placeholder="First Name" class="form-control"  type="text">
                 </div>
               </div>
             </div>
@@ -22,21 +22,12 @@
                   <div class="col-md-4 inputGroupContainer">
                   <div class="input-group">
                 <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                <input name="last_name" placeholder="Last Name" class="form-control"  type="text">
+                <input [(ngModel)]="user.lastName" name="last_name" placeholder="Last Name" class="form-control"  type="text">
                   </div>
                 </div>
               </div>
 
-              <!-- Username field -->
-              <div class="form-group">
-                  <label class="col-md-4 control-label">Username</label>  
-                  <div class="col-md-4 inputGroupContainer">
-                  <div class="input-group">
-                  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                  <input  name="user_name" placeholder="Username" class="form-control"  type="text">
-                    </div>
-                  </div>
-                </div>
+              
 
                 <!-- Password field -->
                 <div class="form-group">
@@ -44,7 +35,7 @@
                       <div class="col-md-4 inputGroupContainer">
                       <div class="input-group">
                     <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                    <input name="user_password" placeholder="Password" class="form-control"  type="password">
+                    <input [(ngModel)]="user.password" name="user_password" placeholder="Password" class="form-control"  type="password">
                       </div>
                     </div>
                   </div>
@@ -55,7 +46,7 @@
                         <div class="col-md-4 inputGroupContainer">
                         <div class="input-group">
                       <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-                      <input name="confirm_password" placeholder="Confirm Password" class="form-control"  type="password">
+                      <input [(ngModel)]="user.confPassword" name="confirm_password" placeholder="Confirm Password" class="form-control"  type="password">
                         </div>
                       </div>
                     </div>
@@ -66,7 +57,7 @@
                           <div class="col-md-4 inputGroupContainer">
                           <div class="input-group">
                               <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-                        <input name="email" placeholder="E-Mail Address" class="form-control"  type="text">
+                        <input [(ngModel)]="user.email" name="email" placeholder="E-Mail Address" class="form-control"  type="text">
                           </div>
                         </div>
                       </div>
@@ -76,7 +67,7 @@
                           <label class="col-md-4 control-label"></label>
                           <div class="col-md-4"><br>
                             
-                            <button type="submit" class="btn btn-primary" >SUBMIT <span class="glyphicon glyphicon-arrow-right"></span></button>
+                            <button (click)="userSubmit(user)" type="submit" class="btn btn-primary" >SUBMIT <span class="glyphicon glyphicon-arrow-right"></span></button>
                           </div>
                       </div>
             
