@@ -20,8 +20,8 @@ export class SignupComponent implements OnInit {
    user={firstName:'',lastName:'',password:'',confPassword:'',email:''};
   userSubmit=function(anotherUser){
     console.log(this);
-    this.user.firstName="Santhosh";
-    anotherUser.firstName="Naini";
+    // this.user.firstName="Medha";
+    // anotherUser.firstName="MedhaNaini";
   this.router.navigate(['/Login']);
   }
 
