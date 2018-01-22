@@ -9,6 +9,7 @@ import {LoginComponent} from './login/login.component';
 import {HomeComponent} from './home/home.component';
 import {RouterModule, Routes} from '@angular/router';
 import { WelcomeComponent } from './welcome/welcome.component';
+import {SignUpService} from './services/signUpService/sign-up.service';
 
 
 
@@ -36,7 +37,7 @@ export const appRoutes: Routes=[
     FormsModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
+  providers: [SignUpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
