@@ -10,6 +10,8 @@ import { appRoutes } from './/app-routing.module';
 import {SignUpService} from './services/signUpService/sign-up.service';
 import {RouterModule, Routes} from '@angular/router';
 
+import {HttpClientModule} from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,6 +23,7 @@ import {RouterModule, Routes} from '@angular/router';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [SignUpService],

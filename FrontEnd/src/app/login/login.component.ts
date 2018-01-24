@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
 import { SignUpService } from '../services/signUpService/sign-up.service';
 
+
+
 @Component({
   selector:'app-login',
   templateUrl: './login.component.html',
@@ -14,7 +16,9 @@ export class LoginComponent implements OnInit {
     private route:ActivatedRoute,
     private router:Router,
     private sign_up_service:SignUpService
+    
   ) {}
+  
   userCredentials={email:'',password:''};
   ngOnInit() {
   }
