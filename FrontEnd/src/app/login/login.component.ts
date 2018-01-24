@@ -6,7 +6,7 @@ import { SignUpService } from '../services/signUpService/sign-up.service';
   selector:'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
-  inputs:['signUpData']
+  // inputs:['signUpData']
 })
 export class LoginComponent implements OnInit {
 
