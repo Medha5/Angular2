@@ -5,12 +5,11 @@ import { SignUpService } from '../services/signUpService/sign-up.service';
 @Component({
   selector:'app-login',
   templateUrl: './login.component.html',
-  styleUrls: ['./login.component.css'],
-  // inputs:['signUpData']
+
+  styleUrls: ['./login.component.css']
+
 })
 export class LoginComponent implements OnInit {
-
-  
   constructor(
     private route:ActivatedRoute,
     private router:Router,
@@ -19,8 +18,8 @@ export class LoginComponent implements OnInit {
   userCredentials={email:'',password:''};
   ngOnInit() {
   }
-  userLogin=function(userCredentials){
+  userLogin=function(userCredentials) {
     this.router.navigate(['/Welcome']);
-  }
+  };
 
 }
