@@ -1,19 +1,9 @@
 import { Injectable } from '@angular/core';
-
 @Injectable()
 export class SignUpService {
-
+  public user;
   constructor() {
-   
+     this.user= {firstName:'',lastName:'',password:'',confPassword:'',email:''};
    }
-    public user={firstName:'',lastName:'',password:'',confPassword:'',email:''};
-
-    userSubmit1=function(userObject){
-      
-      // userObject.firstName="MedhaNaini";
-      this.user=userObject;  
-    
-    }
-    
-
+    userSubmit=function(userObject) { this.user=userObject;};
 }
