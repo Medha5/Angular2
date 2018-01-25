@@ -9,23 +9,31 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { appRoutes } from './/app-routing.module';
 import {SignUpService} from './services/signUpService/sign-up.service';
 import {RouterModule, Routes} from '@angular/router';
-// Import HttpClientModule from @angular/common/http
 import {HttpClientModule} from '@angular/common/http';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {MatCheckboxModule,MatInputModule,MatFormFieldModule,MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
+import {CdkTableModule} from '@angular/cdk/table';
+import { CountryComponent } from './country/country.component';
+
 @NgModule({
   declarations: [
     AppComponent,
     SignupComponent,
     LoginComponent,
     HomeComponent,
-    WelcomeComponent
-    ],
+    WelcomeComponent,
+    CountryComponent
+      ],
   imports: [
-    BrowserModule, HttpClientModule,
+    BrowserModule,
+    HttpClientModule,
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot(appRoutes),
-  ],
+    NoopAnimationsModule,MatCheckboxModule,MatInputModule,MatFormFieldModule,MatDialogModule
+    ],
   providers: [SignUpService],
-  bootstrap: [AppComponent]
-})
+  bootstrap: [AppComponent],
+  exports:[CdkTableModule,MatCheckboxModule,MatInputModule,MatFormFieldModule,MatDialogModule],
+  entryComponents:[CountryComponent]})
 export class AppModule {}

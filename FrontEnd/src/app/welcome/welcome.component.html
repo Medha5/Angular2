@@ -1,16 +1,23 @@
+<mat-checkbox>Check me!</mat-checkbox>
+<mat-form-field class="example-full-width">
+    <input matInput placeholder="Favorite food" value="Sushi">
+  </mat-form-field>
+  
   <h1> <p>Welcome
     <b>{{username}}</b>   </p></h1> 
     <div class="container">
       <table class="table">      
          <thead>
            <tr>
+             <th> Actions</th>
              <th> Country Name</th>
              <th> Country Code </th>
              <th> Capital </th>
            </tr>
          </thead>
          <tbody>
-           <tr *ngFor="let country of result;let i=index"> 
+           <tr *ngFor="let country of result;let i=index" > 
+             <td>  <span (click)="editCountry(country)" class="glyphicon glyphicon-edit"></span> <span (click)="deleteCountry(country)" class="glyphicon glyphicon-remove"></span> </td>            
              <td>{{country.name}}</td>
              <td>{{country.code}}</td>
              <td>{{country.capital}}</td>
@@ -18,3 +25,4 @@
          </tbody>      
       </table>
     </div>
+
