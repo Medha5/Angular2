@@ -1,21 +1,20 @@
-
   <h1> <p>Welcome
     <b>{{username}}</b>   </p></h1> 
-
-
-    <table class="table table-hover">
-      <thead>
-        <tr>
-          <th>Country Name</th>
-          <th>capital</th>
-          <th>population</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let restult of results;">
-          <td>{{restult.name}}</td>
-          <td>{{restult.capital}}</td>
-          <td>{{restult.population}}</td>
-        </tr>      
-      </tbody>
-    </table>
+    <div class="container">
+      <table class="table">      
+         <thead>
+           <tr>
+             <th> Country Name</th>
+             <th> Country Code </th>
+             <th> Capital </th>
+           </tr>
+         </thead>
+         <tbody>
+           <tr *ngFor="let country of result;let i=index">
+             <td>{{country.name}}</td>
+             <td>{{country.alpha3Code}}</td>
+             <td>{{country.capital}}</td>
+           </tr>
+         </tbody>      
+      </table>
+    </div>

@@ -11,8 +11,6 @@ import {SignUpService} from './services/signUpService/sign-up.service';
 import {RouterModule, Routes} from '@angular/router';
 // Import HttpClientModule from @angular/common/http
 import {HttpClientModule} from '@angular/common/http';
-
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,6 +22,7 @@ import {HttpClientModule} from '@angular/common/http';
   imports: [
     BrowserModule, HttpClientModule,
     FormsModule,
+    HttpClientModule,
     RouterModule.forRoot(appRoutes),
   ],
   providers: [SignUpService],
