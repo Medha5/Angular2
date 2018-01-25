@@ -9,6 +9,9 @@ import { WelcomeComponent } from './welcome/welcome.component';
 import { appRoutes } from './/app-routing.module';
 import {SignUpService} from './services/signUpService/sign-up.service';
 import {RouterModule, Routes} from '@angular/router';
+// Import HttpClientModule from @angular/common/http
+import {HttpClientModule} from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -19,7 +22,7 @@ import {RouterModule, Routes} from '@angular/router';
     WelcomeComponent
     ],
   imports: [
-    BrowserModule,
+    BrowserModule, HttpClientModule,
     FormsModule,
     RouterModule.forRoot(appRoutes),
   ],

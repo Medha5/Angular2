@@ -3,8 +3,19 @@
     <b>{{username}}</b>   </p></h1> 
 
 
-
-<!-- <div layout="row" layout-align="center center">
-<div>Welcome user</div>
-
-</div> -->
+    <table class="table table-hover">
+      <thead>
+        <tr>
+          <th>Country Name</th>
+          <th>capital</th>
+          <th>population</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let restult of results;">
+          <td>{{restult.name}}</td>
+          <td>{{restult.capital}}</td>
+          <td>{{restult.population}}</td>
+        </tr>      
+      </tbody>
+    </table>
