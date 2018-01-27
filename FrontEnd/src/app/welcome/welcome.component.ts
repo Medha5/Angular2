@@ -22,6 +22,7 @@ export class WelcomeComponent implements OnInit {
   username = this.sign_up_service.user.firstName + ' ' + this.sign_up_service.user.lastName;
   dataResult: any;
   result: Array<CountryData> = new Array();
+  edited_data:any;
   ngOnInit(): void {
     // Make the HTTP request:
     this.http.get('https://restcountries.eu/rest/v2/all').subscribe(data => {
@@ -40,6 +41,24 @@ export class WelcomeComponent implements OnInit {
     let dialogRef = this.dialog.open(CountryComponent, {
       width: '500px',data: x,
     });
+    
+    dialogRef.afterClosed().subscribe(newData=>{
+console.log('data edited');
+console.log(newData);
+console.log(x);
+if(newData){
+  this.edited_data=this.dataResult.find(y=>y.name==x.name);
+  console.log(this.edited_data);
+  
+  console.log(this.result);
+}
+else{
+console.log('Close without Saving button');
+}
+
+    });
+    
+    
   }
   deleteCountry(x) {
     console.log(x);

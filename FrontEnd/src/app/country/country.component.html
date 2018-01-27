@@ -1,5 +1,5 @@
 
-<h3 class="text-center">Country Edit</h3>
+<h3 class="text-center">Edit Country</h3>
 <div class="table-responsive">
     <table class="table">      
        <tbody>
@@ -7,11 +7,19 @@
             <td>Country Name :</td> <td>{{data.name}}</td>
          </tr>
          <tr>
-            <td> Country Code : </td>  <td>{{data.code}}</td>
+            <td> Country Code : </td>  <td><input [(ngModel)]="data.code"></td>
          </tr>
          <tr>
-            <td> Capital :</td> <td>{{data.capital}}</td>
+            <td> Capital :</td> <td><input [(ngModel)]="data.capital"></td>
           </tr>
+          <mat-dialog-actions>
+            <tr>
+              <td><button mat-button [mat-dialog-close]="true" >Save and Close</button> </td>
+            &nbsp; &nbsp;
+              <td><button mat-button [mat-dialog-close]="false" >Close without Saving</button></td>
+            </tr>
+          </mat-dialog-actions>
+          
        </tbody>
            
     </table>
