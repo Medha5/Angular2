@@ -1,6 +1,7 @@
 import { Component, OnInit,Inject } from '@angular/core';
 
-import {MAT_DIALOG_DATA} from '@angular/material';
+import {MAT_DIALOG_DATA, MatDialog} from '@angular/material';
+
 import { CountryData } from '../interfaces/country-data';
 
 @Component({
@@ -9,7 +10,10 @@ import { CountryData } from '../interfaces/country-data';
   styleUrls: ['./country.component.css']
 })
 export class CountryComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: CountryData) { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data: CountryData,
+public dialog:MatDialog) { }
   ngOnInit() {
   }
+  
+  
 }

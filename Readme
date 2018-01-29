@@ -1,0 +1,13 @@
+Angular2 application
+
+
+Required Tools:  NodeJs, NPM  
+
+get the code using command
+
+step1: git clone -b FrontEnd https://github.com/Medha5/Angular2
+
+step2: npm install
+
+step3: ng serve --open
+
