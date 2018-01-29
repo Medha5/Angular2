@@ -1,6 +1,6 @@
-import { Component, OnInit,Inject } from '@angular/core';
+import { Component, OnInit, Inject } from '@angular/core';
 
-import {MAT_DIALOG_DATA, MatDialog} from '@angular/material';
+import { MAT_DIALOG_DATA, MatDialogRef} from '@angular/material';
 
 import { CountryData } from '../interfaces/country-data';
 
@@ -10,10 +10,15 @@ import { CountryData } from '../interfaces/country-data';
   styleUrls: ['./country.component.css']
 })
 export class CountryComponent implements OnInit {
-  constructor(@Inject(MAT_DIALOG_DATA) public data: CountryData,
-public dialog:MatDialog) { }
+  constructor( @Inject(MAT_DIALOG_DATA) public data: CountryData,  private dialogRef: MatDialogRef<CountryComponent>
+   ) { }
   ngOnInit() {
   }
-  
-  
+
+  update(updateObject:CountryData) {
+    this.dialogRef.close(updateObject);
+  }
+  cancel(isCancel:boolean) {
+    this.dialogRef.close(isCancel);
+  }
 }

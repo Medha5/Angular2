@@ -40,43 +40,33 @@ export class WelcomeComponent implements OnInit {
     });
   }
 
-  editCountry(x) {
-    let copy = Object.assign({}, x);
+  editCountry(country) {
+    let copyCountry:CountryData = Object.assign({}, country);
     let dialogRef = this.dialog.open(CountryComponent, {
-      width: '500px',data: copy,
+      width: '500px',data: copyCountry,
     });
-    
-    dialogRef.afterClosed().subscribe(newData=>{
-    console.log('data edited');
-    console.log(newData);
-    console.log(copy);
-
-    this.edited_data=this.result.findIndex(y=>y.name==newData.name);
-    console.log(this.edited_data);
-    this.result[this.edited_data]=newData;
-    });   
+    dialogRef.afterClosed().subscribe(countryDataDialog=> {
+      // === use for type checking also
+      if(countryDataDialog!==false)  {
+        this.edited_data=this.result.findIndex(y=>y.name === countryDataDialog.name);
+        this.result[this.edited_data]=countryDataDialog;
+      }
+    });
   }
-
-  deleteCountry(x) {
-    let copy_deletedCountry = Object.assign({}, x);
+  deleteCountry(country) {
+    let deletedCountry:CountryData = Object.assign({}, country);
     let dialogRef = this.dialog.open(CountryDeleteComponent, {
-      width: '500px',data:copy_deletedCountry
+      width: '500px',data:deletedCountry
     });
     // When delete is confirmed
-    dialogRef.componentInstance.confirm_delete.subscribe((delete_data)=>{
-      this.deleted_country=this.result.findIndex(y=>y.name==delete_data.name);
-      console.log(this.deleted_country);
+    dialogRef.componentInstance.confirm_delete.subscribe((countryDataDialog)=> {
+      this.deleted_country=this.result.findIndex(y=>y.name === countryDataDialog.name);    
       this.result.splice(this.deleted_country,1);
-      console.log(delete_data);
       dialogRef.close();
     });
-    
     // When delete is cancelled
-    dialogRef.componentInstance.no_delete.subscribe(()=>{
+    dialogRef.componentInstance.no_delete.subscribe(()=> {
       dialogRef.close();
     });
-
-    
-}
-
+  }
 }

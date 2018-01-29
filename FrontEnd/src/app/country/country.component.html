@@ -13,11 +13,8 @@
             <td> Capital :</td> <td><input [(ngModel)]="data.capital"></td>
           </tr>
           <mat-dialog-actions>
-            <tr>
-              <td><button mat-button [mat-dialog-close]="data" [disabled]="" >Save and Close</button> </td>
-            &nbsp; &nbsp;
-              <td><button mat-button [mat-dialog-close]="false" >Close without Saving</button></td>
-            </tr>
+            <button mat-button type="submit" (click)="update(data)">Update</button>
+            <button mat-button type="button" (click)="cancel(false)">Cancel</button>
           </mat-dialog-actions>
           
        </tbody>
