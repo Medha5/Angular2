@@ -14,6 +14,8 @@ import {NoopAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCheckboxModule,MatInputModule,MatFormFieldModule,MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material';
 import {CdkTableModule} from '@angular/cdk/table';
 import { CountryComponent } from './country/country.component';
+import {CountryDeleteComponent} from './country-delete/country-delete.component';
+import { EventEmitter } from '@angular/core';
 
 @NgModule({
   declarations: [
@@ -22,7 +24,8 @@ import { CountryComponent } from './country/country.component';
     LoginComponent,
     HomeComponent,
     WelcomeComponent,
-    CountryComponent
+    CountryComponent,
+    CountryDeleteComponent
       ],
   imports: [
     BrowserModule,
@@ -35,5 +38,5 @@ import { CountryComponent } from './country/country.component';
   providers: [SignUpService],
   bootstrap: [AppComponent],
   exports:[CdkTableModule,MatCheckboxModule,MatInputModule,MatFormFieldModule,MatDialogModule],
-  entryComponents:[CountryComponent]})
+  entryComponents:[CountryComponent,CountryDeleteComponent]})
 export class AppModule {}
