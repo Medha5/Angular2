@@ -1,23 +1,30 @@
 
 <h3 class="text-center">Edit Country</h3>
-<div class="table-responsive">
-    <table class="table">      
-       <tbody>
-         <tr>          
-            <td>Country Name :</td> <td>{{data.name}}</td>
-         </tr>
-         <tr>
-            <td> Country Code : </td>  <td><input [(ngModel)]="data.code"></td>
-         </tr>
-         <tr>
-            <td> Capital :</td> <td><input [(ngModel)]="data.capital"></td>
-          </tr>
-          <mat-dialog-actions>
-            <button mat-button type="submit" (click)="update(data)">Update</button>
-            <button mat-button type="button" (click)="cancel(false)">Cancel</button>
-          </mat-dialog-actions>
-          
-       </tbody>
-           
-    </table>
+<form #form="ngForm">
+  <!-- Country Name -->
+  <div class="form-group">
+    <label>Country Name:</label>
+    
+    <input type="text" class="form-control"  name="countryName" [(ngModel)]="data.name" required readonly>
   </div>
+  <!-- Country Code -->
+  <div class="form-group">
+    <label>Country Code:</label>
+    
+    <input type="text" class="form-control"  name="countryCode" [(ngModel)]="data.code" required>
+  </div>
+  <!-- Country Capital -->
+  <div class="form-group">
+      <label>Country Capital:</label>
+      
+      <input type="text" class="form-control"  name="countryCapital" [(ngModel)]="data.capital" required>
+    </div>
+<!-- Update button -->
+    <div class="form-group">
+        <button [disabled]="form.invalid"  type="submit" (click)="update(data,form)">Update</button>
+      </div>
+      <!-- Cancel button -->
+      <div class="form-group">
+          <button  type="button" (click)="cancel(false)">Cancel</button>
+        </div>
+</form>

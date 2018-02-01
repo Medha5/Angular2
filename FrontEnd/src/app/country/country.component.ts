@@ -15,7 +15,8 @@ export class CountryComponent implements OnInit {
   ngOnInit() {
   }
 
-  update(updateObject:CountryData) {
+  update(updateObject:CountryData,form) {
+    console.log(form);
     this.dialogRef.close(updateObject);
   }
   cancel(isCancel:boolean) {
